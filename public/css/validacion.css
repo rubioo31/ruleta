@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    color: #ffcc00;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 2em;
+    color: #ffcc00;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto 40px auto;
+    background-color: #444;
+    padding: 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.center {
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="file"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ffcc00;
+    border-radius: 5px;
+    background-color: #222;
+    color: #ffcc00;
+}
+
+input[type="text"]::placeholder {
+    color: #bbb;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #c49d03;
+}
+
+
+
+/* ---------------------------
+Estilos para mensajes de validacion
+--------------------------- */
+
+.data-container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px dashed #ffcc00;
+    border-radius: 5px;
+    background-color: #222;
+    color: #ffcc00;
+    font-size: 0.95em;
+}
+
+.link-container {
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.validation-message {
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.link-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.link-container a:hover {
+    background-color: #c49d03;
+}
+
+.validation-message.success {
+    background-color: #006400;  
+    color: #ffcc00;
+}
+
+.validation-message.error {
+    background-color: #8B0000;  
+    color: #ffcc00;
+}

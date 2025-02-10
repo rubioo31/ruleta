@@ -1,4 +1,4 @@
-admin,101000
+admin,179000
 usuario,1000
 pedro,2000
 madalin,12500

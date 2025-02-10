@@ -33,24 +33,29 @@ function sacarExtension($file) {
 }
 
 function datosFichero($file) {
-    $nombre = $file;
+    $nombre    = $file;
     $extension = sacarExtension($file);
-    $tamaño = $_FILES['file']['size'];
-    $tipo = $_FILES['file']['type'];
-    $tmp = $_FILES['file']['tmp_name'];
+    $tamaño    = $_FILES['file']['size'];
+    $tipo      = $_FILES['file']['type'];
+    $tmp       = $_FILES['file']['tmp_name'];
     
-    $destino = STORAGE_PATH . 'documentosPersonales/' . $nombre;
+    // Ruta relativa a la raíz del proyecto
+    $destino = 'storage/documentosPersonales/' . $nombre;
+    
     if (move_uploaded_file($tmp, $destino)) {
-        echo "El archivo ha sido subido correctamente<br>";
+        /* echo "El archivo ha sido subido correctamente<br>"; */
     } else {
         echo "Hubo un problema al guardar el archivo en el directorio<br>";
     }
+    
     return "DATOS FICHERO <br> Nombre: $nombre<br>Extensión: $extension<br>Tamaño: $tamaño<br>Tipo: $tipo<br>Temporal: $tmp<br>";
 }
 
 function leerdatosPersonales() {
-    $ruta = STORAGE_PATH . 'documentosPersonales/' . $_FILES['file']['name'];
+    // Ruta relativa a la carpeta de almacenamiento
+    $ruta = 'storage/documentosPersonales/' . $_FILES['file']['name'];
     $datosPersonales = [];
+    
     if (file_exists($ruta)) {
         $fichero = fopen($ruta, "r");
         while (($linea = fgets($fichero)) !== false) {
@@ -62,6 +67,7 @@ function leerdatosPersonales() {
         }
         fclose($fichero);
     }
+    
     return $datosPersonales;
 }
 ?>

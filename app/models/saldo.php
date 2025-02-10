@@ -1,13 +1,13 @@
 <?php
 function leerSaldos() {
     $saldos = [];
-    $rutaArchivo = BASE_PATH . 'saldoCuenta.txt';
+    // Suponiendo que saldoCuenta.txt está en la raíz del proyecto
+    $rutaArchivo = 'saldoCuenta.txt';
     if (file_exists($rutaArchivo)) {
         $fichero = fopen($rutaArchivo, "r");
         while (($linea = fgets($fichero)) !== false) {
             $datos = explode(",", trim($linea));
             if (count($datos) >= 2) {
-                // Uso el nombre de usuario como clave y saldo como valor
                 $saldos[$datos[0]] = $datos[1];
             }
         }
@@ -19,22 +19,19 @@ function leerSaldos() {
 function asignarSaldo() {
     $saldos = leerSaldos();
     $usuario = $_SESSION['usuario'];
-    if (isset($saldos[$usuario])) {
-        $_SESSION['saldo'] = $saldos[$usuario];
-    } else {
-        $_SESSION['saldo'] = 0;
-    }
+    $_SESSION['saldo'] = isset($saldos[$usuario]) ? $saldos[$usuario] : 0;
 }
 
 function actualizarSaldo() {
     $saldos = leerSaldos();
     $usuario = $_SESSION['usuario'];
     $saldos[$usuario] = $_SESSION['saldo'];
-
+    
     $lineas = [];
     foreach ($saldos as $user => $saldo) {
         $lineas[] = "$user,$saldo";
     }
-    file_put_contents(BASE_PATH . 'saldoCuenta.txt', implode("\n", $lineas));
+    // Guardar en la raiz del proyecto
+    file_put_contents('saldoCuenta.txt', implode("\n", $lineas));
 }
 ?>
