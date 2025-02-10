@@ -1,0 +1,3 @@
+nombre:Admin
+fecha_nacimiento:18/11/2000
+dni:12345678Z
