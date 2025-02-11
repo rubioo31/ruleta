@@ -1,7 +1,4 @@
 <?php
-// app/controllers/auth.php
-
-// Asegurarse de que la sesión esté iniciada
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -14,7 +11,6 @@ function autenticarUsuario()
         exit('Usuario no autenticado');
     }
     
-    // Supongamos que el archivo .htpasswd se encuentra en la raíz del proyecto
     $htpasswd_path = '.htpasswd';
     if (!file_exists($htpasswd_path)) {
         exit("El archivo de usuarios (.htpasswd) no existe en la ruta: $htpasswd_path");

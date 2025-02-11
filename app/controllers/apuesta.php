@@ -1,5 +1,4 @@
 <?php
-
 function realizarApuesta() {
     $apuesta = $_POST['apuesta'];
     $tipo_apuesta = $_POST['tipo_apuesta'];
