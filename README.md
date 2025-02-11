@@ -39,7 +39,7 @@ Esta aplicación es una plataforma interactiva de apuestas que integra las sigui
 
 ## Estructura del Proyecto
 ```
-/tu-proyecto
+/Ruleta
 ├── app
 │   ├── controllers
 │   │   ├── auth.php          # Controlador de autenticación 
