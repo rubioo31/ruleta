@@ -8,7 +8,7 @@ Esta aplicación es una plataforma interactiva de apuestas que integra las sigui
   Se utiliza autenticación HTTP básica mediante un archivo `.htpasswd` para restringir el acceso a usuarios autorizados.
 
 - **Validación de Usuario:**  
-  El usuario debe subir un documento personal con sus datos (por ejemplo, fecha de nacimiento) para validar que es mayor de 18 años y poder participar en las apuestas.
+  El usuario debe subir un documento personal con sus datos (por ejemplo, fecha de nacimiento) para validar que es mayor de 18 años y poder participar en las apuestas, hay dos archivos ya hechos en `/documentos Pruebas`
 
 - **Gestión de Saldo:**  
   El saldo de cada usuario se almacena en el archivo `saldoCuenta.txt`. Cada apuesta actualiza el saldo según el resultado (ganancia o pérdida).
@@ -56,7 +56,8 @@ Esta aplicación es una plataforma interactiva de apuestas que integra las sigui
 │       └── validacion.css    # Estilos para la vista de validación de usuario
 │   
 ├── storage
-│   └── documentosPersonales  # Carpeta para almacenar los archivos subidos por el usuario
+│   ├── documentosPersonales  # Carpeta para almacenar los archivos subidos por el usuario
+│   └── documentosPruebas     # Carpeta con dos archivos de pruebas
 ├── saldoCuenta.txt           # Archivo que guarda el saldo de cada usuario (formato: usuario,saldo)
 ├── .htpasswd                 # Archivo de credenciales para autenticación HTTP básica
 ├── logout.php                # Archivo para cerrar sesion
